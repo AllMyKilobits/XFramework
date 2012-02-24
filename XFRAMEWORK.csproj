@@ -68,7 +68,6 @@
     <Compile Include="Rendering\OffscreenRenders.cs" />
     <Compile Include="Rendering\Watcher.cs" />
     <Compile Include="Text\Text.cs" />
-    <Compile Include="SimpleSerialization.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rendering\BitmapFont.cs" />
     <Compile Include="Rendering\Buffer.cs" />
