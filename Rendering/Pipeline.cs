@@ -188,7 +188,7 @@ namespace XF
 
                 foreach (Layer layer in Graphics.layers)
                 {                      
-                    layer.reset();  // having dumped the sprites, it's only natural to reset it
+                    layer.reset();  // having dumped the sprites, it'state only natural to reset it
                     // it MIGHT be feasible to have a flag disabling this reset in the future for some shader purposes.
                 }
 

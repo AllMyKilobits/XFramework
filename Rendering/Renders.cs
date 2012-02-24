@@ -67,6 +67,7 @@ namespace XF
         // We need a single SFML sprite object:
         private static SFML.Graphics.Sprite sfml_spr = new SFML.Graphics.Sprite();
         private static SFML.Graphics.Shape sfml_shape = new SFML.Graphics.Shape();
+
         private static void render_buffer(ScreenBuffer source_buffer, ScreenBuffer target_buffer, EffectInstance effect)
         {
             var img = source_buffer.render_image as SFML.Graphics.RenderImage;
@@ -76,6 +77,8 @@ namespace XF
 
                 //sfml_spr.FlipY(true); 
                 sfml_spr.Scale = new Vector2f((float)screen_w / source_buffer.w, (float)screen_h / source_buffer.h);
+
+                
 
                 effect.prepare();
                 var so = effect.shader.sfml_shader_object;

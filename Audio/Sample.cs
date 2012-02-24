@@ -22,6 +22,7 @@ namespace XF
             name = path.Substring(s + 1);
             s = name.LastIndexOf('.');
             if (s >= 0) name = name.Substring(0, s);
+
             // aight, create buffer
             this.buffer = new SA.SoundBuffer(path);
             this.volume_modifier = 1f;

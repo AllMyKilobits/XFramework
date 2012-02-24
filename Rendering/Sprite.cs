@@ -143,6 +143,7 @@ namespace XF
                     set_alpha(1.0f);
                 }
             }
+
             public void set_alpha(float alpha)
             {
                 blit.alpha = alpha;

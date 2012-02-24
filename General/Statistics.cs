@@ -31,8 +31,10 @@ namespace XF
             {
                 frames_last_second = frame_counter;
                 frame_counter = 0;
-
                 fps_watch.Restart();
+
+                total_sleep_last_second = sleep_counter;
+                sleep_counter = 0;
             }
 
         }
@@ -42,5 +44,11 @@ namespace XF
             frame_counter++;
         }
 
+        static public int total_sleep_last_second { get; private set; }
+        static private int sleep_counter = 0;
+        internal static void report_about_to_sleep(int ms)
+        {
+            sleep_counter += ms;
+        }
     }
 }

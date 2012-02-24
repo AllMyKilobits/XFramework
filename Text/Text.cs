@@ -51,7 +51,7 @@ namespace XF
         
         #region Private fields 
 
-        // all of these are helpers for the break_text procedure calls.
+        // all of these are helpers for the break_text method calls.
         static private List<Line> linelist = new List<Line>();
         static private StringBuilder line = new StringBuilder();
         static private StringBuilder word; 
@@ -65,7 +65,7 @@ namespace XF
 
         #endregion
 
-        #region The break procedure itself
+        #region The break method itself
         
         /// <summary> Breaks input text into lines based on font data. 
         /// It takes into account the width of each individual character as defined in font data to determine total width. It correctly takes into accountline break characters. </summary>
@@ -151,7 +151,7 @@ namespace XF
 
             }
 
-            br.lines = linelist.ToArray(); // after having this entire procedure iterate through hundreds of numbers, the comparative costs of returning a neatly formated array is negligible.
+            br.lines = linelist.ToArray(); // after having this entire method iterate through hundreds of numbers, the comparative costs of returning a neatly formated array is negligible.
             foreach (var ll in br.lines) if (ll.width > br.max_width) br.max_width = ll.width;
             return br;
         }  
@@ -193,7 +193,7 @@ namespace XF
         #region Alignment regulation
 
         /// <summary> Counts all the occurences of the space character in a given text. </summary>        
-        /// <returns>the number of spaces. Minimum is one for the special purposes of this procedure</returns>
+        /// <returns>the number of spaces. Minimum is one for the special purposes of this method</returns>
         static private int count_spaces(string text)
         {
             var counter = 0;

@@ -30,8 +30,8 @@
 /* 
    A C-program for MT19937, with initialization improved 2002/2/10.
    Coded by Takuji Nishimura and Makoto Matsumoto.
-   This is a faster version by taking Shawn Cokus's optimization,
-   Matthe Bellew's simplification, Isaku Wada's real version.
+   This is a faster version by taking Shawn Cokus'state optimization,
+   Matthe Bellew'state simplification, Isaku Wada'state real version.
 
    Before using, initialize the state by using init_genrand(seed) 
    or init_by_array(init_key, key_length).

@@ -9,8 +9,16 @@ namespace XF
     public static class Application
     {
         public static string    root_path;
+
+        /// <summary>itle of the window </summary>
         public static string    title = "[no name]";
-        public static int       ticks_per_second = 50;        
+
+        /// <summary>Set the master Session tick frequency</summary>
+        public static float     ticks_per_second
+        {
+            get { return (1f / (float)Session.Threading.tick_duration);}
+            set { Session.Threading.set_tick_interval(1f / value); }
+        }
         
         private static List<string> asset_dirs = new List<string>();
 
@@ -18,14 +26,14 @@ namespace XF
         public static bool audio_disabled = false;
         public static bool screen_logger  = false;
 
+        /// <summary>Mark a directory for loading all found graphics, shader, and audio assets </summary>        
         public static void load_assets(string dir)
         {
             asset_dirs.Add(dir);
         }
 
         public static void startup()
-        {         
-            Session.set_tick_interval(1f / ticks_per_second);
+        {   
             Graphics.back_color = 0xff404040;
                         
             foreach (var path in asset_dirs)

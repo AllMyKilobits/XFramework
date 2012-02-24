@@ -262,7 +262,8 @@ namespace XF
             static public crds4 operator + (crds4 a, crds4 b) { return new crds4(a.x + b.x, a.y + b.y, a.z + b.z, a.w + b.w); }
             static public crds4 operator - (crds4 a, crds4 b) { return new crds4(a.x - b.x, a.y - b.y, a.z - b.z, a.w - b.w); }
             static public crds4 operator * (crds4 a, float b) { return new crds4(a.x * b,   a.y * b,   a.z * b,   a.w * b  ); }
-
+            static public crds4 operator * (crds4 a, crds4 b) { return new crds4(a.x * b.x, a.y * b.y, a.z * b.z, a.w * b.w); }
+            
             public crds3 to_crds3 { get { return new crds3(x, y, z); } }
 
             public void normalize()

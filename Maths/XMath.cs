@@ -158,13 +158,13 @@ namespace XF
                 
         public static float saw_sequence(float min, float max, float period_in_seconds, float time_offset = 0f)
         {
-            var q = (float)Math.IEEERemainder((Session.elapsed_time + time_offset) / period_in_seconds, 1f) + 0.5f;
+            var q = (float)Math.IEEERemainder((Session.time + time_offset) / period_in_seconds, 1f) + 0.5f;
             return min + (max - min) * q;            
         }
 
         public static float ping_pong(float min, float max, float period_in_seconds, float time_offset = 0f)
         {
-            var q = (float)Math.IEEERemainder(((Session.elapsed_time + time_offset)*2f) / period_in_seconds, 2f);
+            var q = (float)Math.IEEERemainder(((Session.time + time_offset)*2f) / period_in_seconds, 2f);
             q += 1f;
             if (q > 1f) q = 2f - q;
             return min + (max - min) * q;
@@ -325,7 +325,7 @@ namespace XF
                 if (new_diff >  difference) loop = false;
                 else            difference = new_diff;
             }
-            // at this moment, d1 is conveniently the seeker's vector to catch up to the projected target's position
+            // at this moment, d1 is conveniently the seeker'state vector to catch up to the projected target'state position
             return (d0 + d1) * (seeker_speed * 0.5f);            
 
         }

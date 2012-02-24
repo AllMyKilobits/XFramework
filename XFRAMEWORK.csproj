@@ -58,7 +58,9 @@
     <Compile Include="General\Debug.cs" />
     <Compile Include="General\Globals.cs" />
     <Compile Include="COMPONENTS\MersenneTwister.cs" />
-    <Compile Include="General\Threading.cs" />
+    <Compile Include="Session\Events.cs" />
+    <Compile Include="Session\State.cs" />
+    <Compile Include="Session\Threading.cs" />
     <Compile Include="General\Utility.cs" />
     <Compile Include="Input\Input.cs" />
     <Compile Include="Interfaces\Interfaces.cs" />
@@ -81,7 +83,7 @@
     <Compile Include="Rendering\Sprite.cs" />
     <Compile Include="Text\TextRendering.cs" />
     <Compile Include="Rendering\Texture.cs" />
-    <Compile Include="General\Session.cs" />
+    <Compile Include="Session\Session.cs" />
     <Compile Include="General\Statistics.cs" />
     <Compile Include="General\Types.cs" />
     <Compile Include="Maths\XMath.cs" />

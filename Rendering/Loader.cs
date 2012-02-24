@@ -16,7 +16,7 @@ namespace XF
 
             using (StreamReader r = new StreamReader(file))
             {
-                BitmapFont font = new BitmapFont(tex, file); // we create it now, but delete it at the end of procedure
+                BitmapFont font = new BitmapFont(tex, file); // we create it now, but delete it at the end of method
 
                 uint current_letter = 0;
 

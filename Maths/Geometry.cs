@@ -176,20 +176,27 @@ namespace XF
             {
                 var j = i + 1; if (j == n) j = 0;
                 sum += polygon[i].x * polygon[j].y - polygon[j].x * polygon[i].y;
-            }
-            return sum * 0.5f; // SUM is now the full SURFACE of the polygon
+            }            
+            return XMath.abs(sum * 0.5f); // SUM is now the full SURFACE of the polygon
         }
 
         static public crds2 centroid_of_polygon(crds2[] polygon)
         {
-            var surface = surface_of_polygon(polygon);
-            var n = polygon.Length; crds2 coordz = crds2.zero;
+            var n = polygon.Length;
+            float sum = 0f;
+            for (int i = 0; i < n; i++)
+            {
+                var j = i + 1; if (j == n) j = 0;
+                sum += polygon[i].x * polygon[j].y - polygon[j].x * polygon[i].y;
+            }
+            var surf = sum / 2;
+            crds2 coordz = crds2.zero;
             for (int i = 0; i < n; i++) { var j = i + 1; if (j == n) j = 0;
                 coordz.x += (polygon[i].x + polygon[j].x) * (polygon[i].x * polygon[j].y - polygon[j].x * polygon[i].y);
                 coordz.y += (polygon[i].y + polygon[j].y) * (polygon[i].x * polygon[j].y - polygon[j].x * polygon[i].y);
             }
-            coordz.x /= 6 * surface;
-            coordz.y /= 6 * surface;
+            coordz.x /= 6 * surf;
+            coordz.y /= 6 * surf;
             return coordz;
         }
 

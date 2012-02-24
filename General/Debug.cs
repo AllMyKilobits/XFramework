@@ -45,7 +45,7 @@ namespace XF
         // this is my VERY FIRST EVENT EVER!
 
         public delegate void call_on_log (string logged_text);   // you first declare a delegate that will be used for the event
-        static public event  call_on_log log_event;              // then you declare the EVENT object, supplying a delegate
+        static internal event  call_on_log log_event;              // then you declare the EVENT object, supplying a delegate
 
         public static void Log(Object obj, priorities priority = priorities.low) // this is a normal method.
         {

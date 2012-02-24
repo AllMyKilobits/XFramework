@@ -256,7 +256,7 @@ namespace XF.Collections.Generic
            Array.Copy(_data, array, _count);
        }
 
-       /// <summary>Removes an item from the binary heap. This utilizes the type T's Comparer and will not remove duplicates.</summary>
+       /// <summary>Removes an item from the binary heap. This utilizes the type T'state Comparer and will not remove duplicates.</summary>
        /// <param name="item">The item to be removed.</param>
        /// <returns>Boolean true if the item was removed.</returns>
        public bool Remove(T item)

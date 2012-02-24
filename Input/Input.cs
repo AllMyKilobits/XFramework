@@ -240,7 +240,7 @@ namespace XF
 
         /////////////////////////////////////////////////////////////////////////////////////
 
-        #region Events
+        #region Event
         static public class Events
         {
             public static void on_key_press(object sender, SFML.Window.KeyEventArgs e)

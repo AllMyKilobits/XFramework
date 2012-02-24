@@ -7,12 +7,17 @@ namespace XF.Components
     {
         public ScreenLog()
         {
+            Debug.log_event += new Debug.call_on_log(intercepted_log); // subscribe to the EVENT by supplying the handler with a METHOD matching the DELEGATE
+
+            register(Event.render, this.render);
+            register(Event.tick, this.tick);            
+
             font = Graphics.default_font;
             active = true;
             if (Graphics.layers.Count > 0)
                 draw_layer = Graphics.layers[Graphics.layers.Count - 1];
 
-            fade_time = (int)(1f * Session.ticks_per_second);
+            fade_time = (int)(1f * Application.ticks_per_second);
             total_time = 2 * fade_time;
             
         }
@@ -28,12 +33,6 @@ namespace XF.Components
         public float alpha_multiplier = 0.6f;
 
         private int time_left;
-
-        public override void on_state_init()
-        {
-            base.on_state_init();
-            Debug.log_event += new Debug.call_on_log( intercepted_log ); // subscribe to the EVENT by supplying the handler with a METHOD matching the DELEGATE            
-        }
 
         private class notification
         {
@@ -76,9 +75,8 @@ namespace XF.Components
 
         private bool active;
 
-        public override void on_render(float interpolation)
-        {   
-            base.on_render(interpolation);
+        private void render()
+        {               
             if (!active) return;
 
             float y = Graphics.screen_h - 40f;
@@ -94,7 +92,7 @@ namespace XF.Components
             }
         }
 
-        public override void on_tick()
+        private void tick()
         {
             if (notifications.Count == 0)
             {

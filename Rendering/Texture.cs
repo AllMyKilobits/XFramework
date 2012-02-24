@@ -27,12 +27,12 @@ namespace XF
             internal bool    manipulate_white_to_alpha;
             
             
-
             public SFML.Graphics.Image    image;          // implementation!
             //public SFML.Graphics.RenderImage 
             
             public Texture()
             {
+                
                 sequence.set(1, 1);
                 size.set(0, 0);
                 size_full.set(0, 0);
